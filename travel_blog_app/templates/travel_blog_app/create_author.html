@@ -1,0 +1,9 @@
+{% extends "travel_blog_app/base.html" %} {% load static %} {% block content %}
+<div class="h-80">
+  <h2>Create Author</h2>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Create Author</button>
+  </form>
+</div>
+{% endblock content %}

@@ -8,9 +8,43 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <style>
+      body,
+      html {
+        height: 100vh;
+      }
+      header {
+        background-color: #343a40;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        color: white;
+        text-align: center;
+        height: 8vh;
+      }
+      nav {
+        background-color: #007bff;
+        height: 4vh;
+      }
+      main {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        height: 8vh;
+      }
+    </style>
   </head>
+
   <body>
-    <header class="bg-dark text-white text-center py-5">
+    <header>
       <h1>Travel Blog</h1>
     </header>
 
@@ -32,22 +66,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
+              <a class="nav-link" href="{% url 'create_author' %}">Agregar Autores</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'create_category' %}">Agregar Categorias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'new_post' %}">Nuevo Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Página 3</a>
+              <a class="nav-link" href="{% url 'search_post' %}">Buscar Post</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container mt-5">{% block content%} {% endblock content%}</div>
+    <main>{% block content%} {% endblock content%}</main>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="py-3">
       <p>&copy; 2023 Mi Proyecto con Bootstrap</p>
     </footer>
 

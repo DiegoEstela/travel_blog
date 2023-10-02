@@ -1,0 +1,17 @@
+{% extends "travel_blog_app/base.html" %} {% load static %} {% block content %}
+<h2>Buscar Posts</h2>
+<form method="get">
+  <input type="text" name="q" placeholder="Search..." />
+  <button type="submit">Search</button>
+</form>
+
+<h3>Results for "{{ query }}"</h3>
+<ul>
+  {% for post in results %}
+  <li>
+    <a href="#">{{ post.title }}</a>
+    <p>{{ post.content }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
